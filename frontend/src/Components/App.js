@@ -42,7 +42,7 @@ class App extends React.Component {
         <div className="row">
         <nav>
           <div className="nav-wrapper blue darken-1">
-            <a href="/" className="brand-logo">Soccer Management</a>
+            <a href="/" className="brand-logo">Antiracism Work</a>
           </div>
         </nav>
         </div>
