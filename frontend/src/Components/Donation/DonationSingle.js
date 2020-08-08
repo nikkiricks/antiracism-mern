@@ -6,7 +6,7 @@ const DonationSingle = (props) => {
       <div className="col s12 m6">
       <div className="card">
         <div className="card-image">
-        <span className="card-title">{props.donation.organizationName} {props.donation.dollarAmount}</span>
+        <span className="card-title">{props.donation.organizationName} ${props.donation.dollarAmount}</span>
 
         </div>
         <div className="card-content">
