@@ -18,9 +18,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = 'http://localhost:4000/donations'
 
-    axios.get(url)
+    axios.get(proxyurl + url)
       .then((Response) => {
         this.setState({
           donations: Response.data
