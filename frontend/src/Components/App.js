@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios'
 import './App.css';
 import DonationList from './Donation/DonationList'
-import DonationSingle from './Donation/DonationSingle'
+// import DonationSingle from './Donation/DonationSingle'
 import DonationForm from './Donation/DonationForm'
 
 
@@ -18,10 +18,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = 'http://localhost:4000/donations'
 
-    axios.get(proxyurl + url)
+    axios.get(url, { crossdomain: true })
       .then((Response) => {
         this.setState({
           donations: Response.data
@@ -51,7 +50,7 @@ class App extends React.Component {
           <div className="col s3"><DonationList donations={this.state.donations}
             updateCurrentDonation={this.updateCurrentDonation}/>
           </div>
-          <div className="col s9"><DonationSingle donation={this.state.currentDonation}/></div>
+          {/* <div className="col s9"><DonationSingle donation={this.state.currentDonation}/></div> */}
         </div>
         <div className="row">
           <div className="col s12"><DonationForm /></div>
