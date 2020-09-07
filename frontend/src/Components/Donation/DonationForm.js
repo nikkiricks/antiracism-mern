@@ -20,7 +20,7 @@ class DonationForm extends React.Component {
   render() { 
     return ( 
       <div className="row">
-        <h1 className="center">Add a new donation</h1>
+        <h4 className="center">Add a new donation</h4>
         <form className="col s12" onSubmit={this.submitDonation.bind(this)}>
           <div className="row">
             <div className="input-field col s6">

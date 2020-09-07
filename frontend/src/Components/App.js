@@ -2,9 +2,7 @@ import React from 'react';
 import axios from 'axios'
 import './App.css';
 import DonationList from './Donation/DonationList'
-// import DonationSingle from './Donation/DonationSingle'
 import DonationForm from './Donation/DonationForm'
-
 
 class App extends React.Component {
   constructor(props) {
@@ -47,13 +45,12 @@ class App extends React.Component {
         </nav>
         </div>
         <div className="row">
-          <div className="col s3"><DonationList donations={this.state.donations}
+          <div className="col s10"><DonationList donations={this.state.donations}
             updateCurrentDonation={this.updateCurrentDonation}/>
           </div>
-          {/* <div className="col s9"><DonationSingle donation={this.state.currentDonation}/></div> */}
         </div>
         <div className="row">
-          <div className="col s12"><DonationForm /></div>
+          <div className="col s10"><DonationForm /></div>
         </div>
       </div>
     );

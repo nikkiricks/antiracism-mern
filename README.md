@@ -31,7 +31,7 @@ You can navigate to http://localhost:3000 to see the app
 
 I ran into issues with CORS so spent some time debugging with this [article](https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe).
 
-I realized it may be an Axios issue and found a solution on [this github board](https://github.com/axios/axios/issues/853).
+I realized it may be an Axios issue and found a solution on [this Github board](https://github.com/axios/axios/issues/853).
 
 I finally got it to work by adding in the backend/index.js file the following code:
 
