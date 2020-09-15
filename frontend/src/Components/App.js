@@ -12,13 +12,19 @@ class App extends React.Component {
     this.state = {
       donations: [],
       currentDonation: {},
+      entries: [],
+      currentEntry: {}
     }
   
     this.updateCurrentDonation = this.updateCurrentDonation.bind(this)
+    this.updateCurrentEntry = this.updateCurrentEntry.bind(this)
+
   }
 
   componentDidMount() {
     const urlDonations = 'http://localhost:4000/donations'
+    const urlEntries = 'http://localhost:4000/entries'
+
 
     axios.get(urlDonations, { crossdomain: true })
       .then((Response) => {
@@ -28,11 +34,26 @@ class App extends React.Component {
       })
       .catch((error) =>
       console.log(error))
+    
+    axios.get(urlEntries, { crossdomain: true })
+      .then((Response) => {
+        this.setState({
+          entries: Response.data
+        })
+      })
+      .catch((error) =>
+      console.log(error))
   }
 
   updateCurrentDonation(item) {
     this.setState({
       currentDonation: item,
+    })
+  }
+
+  updateCurrentEntry(item) {
+    this.setState({
+      currentEntry: item,
     })
   }
 
@@ -55,7 +76,9 @@ class App extends React.Component {
           <div className="col s10"><DonationForm /></div>
         </div>
         <div className="row">
-          <div className="col s10"><EntryList /></div>
+          <div className="col s10"><EntryList entries={this.state.entries}
+          updateCurrentEntry={this.updateCurrentEntry}/>
+          </div>
         </div>
         <div className="row">
           <div className="col s10"><EntryForm /></div>

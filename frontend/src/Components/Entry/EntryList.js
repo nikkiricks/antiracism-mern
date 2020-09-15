@@ -1,8 +1,16 @@
 import React from 'react';
 
-const EntryList = () => {
+const EntryList = (props) => {
   return ( <div>
-    My list of daily entries wahooooo!
+    <h4>Daily Entries</h4>
+    <ul className="collection">
+      {props.entries.map((item) => (
+        <div className="collection-item" key={item._id}
+      onClick={props.updateCurrentEntry.bind(this,item)}>{item.entry} - {item.created_date}
+      </div> 
+      ))}
+    </ul>
+
   </div> );
 }
  
