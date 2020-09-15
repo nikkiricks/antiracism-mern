@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
-import { DonationSchema } from '../models/antiracismModel'
+import { DonationSchema, EntrySchema } from '../models/antiracismModel'
 
 const Donation = mongoose.model('Donations', DonationSchema);
+const Entry = mongoose.model('Entries', EntrySchema);
 
 export const addNewDonation = (req,res) => {
   let newDonation = new Donation(req.body);
@@ -47,5 +48,26 @@ export const deleteDonation = (req,res) => {
       res.send(err)
     }
     res.json({message: "successfully deleted donation"})
+  })
+}
+
+//entries
+export const addNewEntry = (req,res) => {
+  let newEntry = new Entry(req.body);
+
+  newEntry.save((err, entry) => {
+    if (err) {
+      res.send(err)
+    }
+    res.json(entry)
+  })
+}
+
+export const getEntries = (req,res) => {
+  Entry.find({}, (err, entry) => {
+    if (err) {
+      res.send(err)
+    }
+    res.json(entry)
   })
 }
