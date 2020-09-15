@@ -3,6 +3,8 @@ import axios from 'axios'
 import './App.css';
 import DonationList from './Donation/DonationList'
 import DonationForm from './Donation/DonationForm'
+import EntryList from './Entry/EntryList'
+import EntryForm from './Entry/EntryForm'
 
 class App extends React.Component {
   constructor(props) {
@@ -16,9 +18,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const url = 'http://localhost:4000/donations'
+    const urlDonations = 'http://localhost:4000/donations'
 
-    axios.get(url, { crossdomain: true })
+    axios.get(urlDonations, { crossdomain: true })
       .then((Response) => {
         this.setState({
           donations: Response.data
@@ -51,6 +53,12 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col s10"><DonationForm /></div>
+        </div>
+        <div className="row">
+          <div className="col s10"><EntryList /></div>
+        </div>
+        <div className="row">
+          <div className="col s10"><EntryForm /></div>
         </div>
       </div>
     );
