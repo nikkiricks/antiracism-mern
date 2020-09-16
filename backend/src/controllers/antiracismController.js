@@ -71,3 +71,12 @@ export const getEntries = (req,res) => {
     res.json(entry)
   })
 }
+
+export const deleteEntry = (req,res) => {
+  Entry.deleteOne({ _id: req.params.entryID }, (err, entry) => {
+    if (err) {
+      res.send(err)
+    }
+    res.json({message: "successfully deleted donation"})
+  })
+}
