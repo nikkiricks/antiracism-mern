@@ -1,4 +1,4 @@
-import { addNewDonation, getDonations, getDonationWithID, updateDonation, deleteDonation, addNewEntry, getEntries, deleteEntry } from '../controllers/antiracismController'
+import { addNewDonation, getDonations, getDonationWithID, updateDonation, deleteDonation, addNewEntry, getEntries, updateEntry, deleteEntry } from '../controllers/antiracismController'
 
 const routes = (app) => {
   //create route for donations
@@ -24,8 +24,7 @@ const routes = (app) => {
 
   app.route('/entries/:entryID')
     //create put request
-    .put((req, res) =>
-    res.send('PUT request successful!'))
+    .put(updateEntry)
     //create delete request
     .delete(deleteEntry)
     

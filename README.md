@@ -4,6 +4,14 @@ A MERN app to track my antiracism
 
 Please see my [medium article](https://medium.com/weekly-webtips/building-restful-apis-with-node-js-and-express-a9f648219f5b) for reference.
 
+## Getting Started
+
+In your terminal do a git clone of the project
+
+Then run:
+
+`npm install`
+
 ## Backend
 
 To start up the backend from the root file

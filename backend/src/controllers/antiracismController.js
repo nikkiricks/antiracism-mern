@@ -72,6 +72,15 @@ export const getEntries = (req,res) => {
   })
 }
 
+export const updateEntry = (req,res) => {
+  Entry.findOneAndUpdate({ _id: req.params.entryID }, req.body, { new: true, useFindAndModify: false }, (err, entry) => {
+    if (err) {
+      res.send(err)
+    }
+    res.json(entry)
+  })
+}
+
 export const deleteEntry = (req,res) => {
   Entry.deleteOne({ _id: req.params.entryID }, (err, entry) => {
     if (err) {
