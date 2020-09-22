@@ -2,6 +2,8 @@
 
 A MERN app to track my antiracism
 
+![mern-screenshot](nikki-ricks-mern-antiracism.png "Logo Title Text 2")
+
 Please see my [medium article](https://medium.com/weekly-webtips/building-restful-apis-with-node-js-and-express-a9f648219f5b) for reference.
 
 ## Getting Started
