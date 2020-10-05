@@ -6,6 +6,8 @@ A MERN app to track my antiracism
 
 Please see my [medium article](https://medium.com/weekly-webtips/building-restful-apis-with-node-js-and-express-a9f648219f5b) for reference.
 
+And here is [part two](https://medium.com/@nikki.ricks/mern-part-ii-building-the-frontend-of-a-restful-api-with-react-d10f11a9f19c)
+
 ## Getting Started
 
 In your terminal do a git clone of the project
